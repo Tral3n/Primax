@@ -27,10 +27,10 @@ if($_POST['formulario'] == 'registro'){
         if (!empty($_POST["user_name"]) and !empty($_POST["password"])) {
 
             $con = mysqli_connect(
-                "localhost",
-                "root",
-                "",
-                "primax"
+                "us-cdbr-east-04.cleardb.com",
+                "be638dfe02bc87",
+                "18c8a290",
+                "heroku_f7036baf347b6a5"
             ) or die("No se conecto.");
 
             
