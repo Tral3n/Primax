@@ -33,7 +33,7 @@ session_start();
 
 
 
-                <form action="controladorRegistro.php" method="post" align="center">
+                <form action="controladores/controladorRegistro.php" method="post" align="center">
                    
 
                 <div>
