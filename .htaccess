@@ -1,7 +1,12 @@
+ErrorDocument 404 /
+ErrorDocument 403 /
+
+DirectoryIndex index.php
+Options +FollowSymLinks -Indexes
+
 RewriteEngine On
 
-RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{THE_REQUEST} !/(?:users|allowed|js|css)[/?] [NC]
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-s
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule !\.(html|htm|php|js|ico|gif|jpg|png|css|csv)$ /subdir/index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
