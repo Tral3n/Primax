@@ -52,11 +52,13 @@ isset($_SESSION['nombre_usuario']))
 
                 <h2 style="margin-bottom: 25px; text-align: center;"><b> Gestor de Empleados</b></h2>
                 <br>
+                <label for="formGroupExampleInput" class="form-label"><b>Los campos con "*" son obligatorios</b></label>
+                <br>
                 <div class="row">
                     <div class="col-sm">
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Tipo Identificación</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Tipo Identificación *</b></label>
                             <select class="form-select" name='t' aria-label="Default select example" <?php echo isset($_REQUEST['btnConsultar']) ? 'disabled' : '' ?>>
                                 <option selected>Seleccionar</option>
                                 <option value="CC">CC</option>
@@ -67,25 +69,25 @@ isset($_SESSION['nombre_usuario']))
                         <br>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Numero Identificación</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Numero Identificación *</b></label>
                             <input type="number" class="form-control" id="numero_identificacion" name="numero_identificacion" placeholder=" # Identificación" value="<?php echo isset($_REQUEST['btnConsultar']) ? $_POST['numero_identificacion'] : '' ?>">
                         </div>
                         <br>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Nombre</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Nombre *</b></label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" <?php echo isset($_REQUEST['btnConsultar']) ? 'disabled' : '' ?>>
                         </div>
                         <br>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Apellidos</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Apellidos * </b></label>
                             <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" <?php echo isset($_REQUEST['btnConsultar']) ? 'disabled' : '' ?>>
                         </div>
                         <br>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Sexo</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Sexo *</b></label>
                             <select class="form-select" name='se' aria-label="Default select example" <?php echo isset($_REQUEST['btnConsultar']) ? 'disabled' : '' ?>>
                                 <option selected>Seleccionar</option>
                                 <option value="Femenino">Femenino</option>
@@ -99,31 +101,31 @@ isset($_SESSION['nombre_usuario']))
                     </div>
                     <div class="col-sm">
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Dirección</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Dirección *</b></label>
                             <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección" value="<?php echo isset($_REQUEST['btnConsultar']) ? $Direccion : '' ?>">
                         </div>
                         <br>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Contacto Familiar</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Contacto Familiar * </b></label>
                             <input type="text" class="form-control" id="contacto" name="contacto" placeholder="Contacto Familiar" value="<?php echo isset($_REQUEST['btnConsultar']) ? $Contacto : '' ?>">
                         </div>
                         <br>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Parentesco</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Parentesco *</b></label>
                             <input type="text" class="form-control" id="parentesco" name="parentesco" placeholder="Parentesco" value="<?php echo isset($_REQUEST['btnConsultar']) ? $Parentesco : '' ?>"">
                         </div>
                         <br>
 
                         <div class=" form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Telefono</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Telefono *</b></label>
                             <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" value="<?php echo isset($_REQUEST['btnConsultar']) ? $Telefono : '' ?>">
                         </div>
                         <br>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Cargo</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Cargo *</b></label>
                             <select class="form-select" name='ca' aria-label="Default select example">
                                 <option>Seleccionar</option>
                                 <option <?php echo isset($_REQUEST['btnConsultar']) ? $Cargo == "Gerente" ? 'selected' : '' : '' ?> value="Gerente">Gerente</option>
@@ -142,7 +144,7 @@ isset($_SESSION['nombre_usuario']))
                     <div class="col-sm">
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Tipo Contrato</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Tipo Contrato * </b></label>
                             <select class="form-select" name='ti' value="<?php echo isset($_REQUEST['btnConsultar']) ? $Tipo : '' ?>">
                                 <option>Seleccionar</option>
                                 <option <?php echo isset($_REQUEST['btnConsultar']) ? $Tipo == "Termino fijo inferior" ? 'selected' : '' : '' ?> value="Termino fijo inferior">Termino fijo inferior</option>
@@ -154,7 +156,7 @@ isset($_SESSION['nombre_usuario']))
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Estado</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Estado *</b></label>
                             <select class="form-select" name='es' aria-label="Default select example" value="<?php echo isset($_REQUEST['btnConsultar']) ? $Estado : '' ?>">
                                 <option selected>Seleccionar</option>
                                 <option <?php echo isset($_REQUEST['btnConsultar']) ? $Estado == "Activo" ? 'selected' : '' : '' ?> value="Activo">Activo</option>
@@ -165,7 +167,7 @@ isset($_SESSION['nombre_usuario']))
                         <br>
 
                         <div class="form-group">
-                            <label for="formGroupExampleInput" class="form-label"><b>Fecha Ingreso</b></label>
+                            <label for="formGroupExampleInput" class="form-label"><b>Fecha Ingreso *</b></label>
                             <input type="date" class="form-control" id="fechai" name="fechai" value="<?php echo date("Y-m-d"); ?>">
                         </div>
                         <br>

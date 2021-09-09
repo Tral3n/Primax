@@ -23,6 +23,7 @@ session_start();
 <body>
 
     <div class="container">
+        
         <div class="row">
             <div class="col">
 
@@ -32,7 +33,8 @@ session_start();
             <div class="col-4">
 
 
-
+            <br>
+        <br>
                 <form action="Controladores/controladorRegistro.php" method="post" align="center">
                    
 
@@ -51,18 +53,20 @@ session_start();
                     <br />
                     <h2>Ingrese los datos del Usuario para el registro</h2>
 
-                    <br><br>
+                    <br>
+                    <label for="formGroupExampleInput" class="form-label"><b>Los campos con "*" son obligatorios</b></label>
+                    <br>
 
                     <div class="form-group">
-                        <label for="formGroupExampleInput" class="form-label"><b>NOMBRE</b></label>
+                        <label for="formGroupExampleInput" class="form-label"><b>NOMBRE *</b></label>
                         <br>
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                         <br>
-                        <label for="formGroupExampleInput" class="form-label"><b>USUARIO</b></label>
+                        <label for="formGroupExampleInput" class="form-label"><b>USUARIO *</b></label>
                         <br>
                         <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Usuario">
                         <br>
-                        <label for="formGroupExampleInput" class="form-label"><b>PASSWORD</b></label><br>
+                        <label for="formGroupExampleInput" class="form-label"><b>PASSWORD *</b></label><br>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                         <br><br>
 
