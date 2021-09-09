@@ -1,7 +1,15 @@
-RewriteEngine on
-RewriteBase /
+<IfModule mod_rewrite.c>
+<IfModule mod_negotiation.c>
+Options -MultiViews
+</IfModule>
 
-RewriteCond %{REQUEST_FILENAME} !-f
+RewriteEngine On
+
+# Redirect Trailing Slashes...
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Handle Front Controller...
 RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteRule ^(.*)$ index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+</IfModule>
