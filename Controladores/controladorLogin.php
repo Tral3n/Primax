@@ -17,7 +17,7 @@ if($_POST['formulario'] == 'index'){
         if (isset($_SESSION['mensaje'])) {
             
             $_SESSION['mensaje']= "Debes ingresar el usuario y el password, ";
-            header('primax\index.php');
+            header('Location:../index.php');
             
 
         }
