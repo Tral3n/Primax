@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '32f5b5e9b138818d667b7499c2911de084441bcc',
+        'reference' => '5587dc761a1863fc14fefd18f4197187779cdb79',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '32f5b5e9b138818d667b7499c2911de084441bcc',
+            'reference' => '5587dc761a1863fc14fefd18f4197187779cdb79',
             'dev_requirement' => false,
         ),
         'symfony/apache-pack' => array(
