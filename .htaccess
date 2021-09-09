@@ -1,4 +1,15 @@
 RewriteEngine On
+RewriteCond %{HTTPS} !=on
+
+# Redirect to https version
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule !\.(html|htm|php|js|ico|gif|jpg|png|css|csv)$ /subdir/index.php
+# If we receive a forwarded http request from a proxy...
+RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
+
+# ...or just a plain old http request directly from the client
+RewriteCond %{HTTP:X-Forwarded-Proto} =""
