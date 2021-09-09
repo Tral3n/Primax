@@ -52,7 +52,7 @@ if($_POST['formulario'] == 'index'){
                 $_SESSION['mascota'] = "cocodrilo";
 
         
-                header("primax\Menu.php");
+                header("Location:../Menu.php");
             } else {
 
                 if (isset($_SESSION['mensaje'])) {
