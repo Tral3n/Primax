@@ -17,7 +17,7 @@ if($_POST['formulario'] == 'index'){
         if (isset($_SESSION['mensaje'])) {
             
             $_SESSION['mensaje']= "Debes ingresar el usuario y el password, ";
-            header('Location:../index.php');
+            header('primax\index.php');
             
 
         }
@@ -52,7 +52,7 @@ if($_POST['formulario'] == 'index'){
                 $_SESSION['mascota'] = "cocodrilo";
 
         
-                header("Location:../Menu.php");
+                header("primax\Menu.php");
             } else {
 
                 if (isset($_SESSION['mensaje'])) {
