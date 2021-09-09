@@ -10,5 +10,4 @@ $db = substr($url["path"], 1);
 $conexion=mysqli_connect($db_host,$db_usuario,$db_pw,$db_nombre);
 
 
-
 ?>
