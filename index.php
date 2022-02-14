@@ -33,7 +33,7 @@ session_start();
 
 
 
-                <form action="controladores/controladorLogin.php" method="post" align="center">
+                <form action="Controladores/controladorLogin.php" method="post" align="center">
                     <div>
                         <?php
 
