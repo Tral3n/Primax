@@ -56,7 +56,7 @@ if($_POST['formulario'] == 'index'){
             } else {
 
                 if (isset($_SESSION['mensaje'])) {
-
+                      
                     $_SESSION['mensaje']= "Corregir usuario o password, son invalidos";
                     header("Location:../index.php");
                     

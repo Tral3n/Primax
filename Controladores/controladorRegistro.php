@@ -16,7 +16,7 @@ if($_POST['formulario'] == 'registro'){
         
         if (isset($_SESSION['mensaje'])) {
             
-            $_SESSION['mensaje'] = "Debes ingresar los datos para el registro";
+            $_SESSION['mensaje'] = "Debes ingresar los datos obligatorios para el registro";
             header('Location:../Registro.php');
             
 

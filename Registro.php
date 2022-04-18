@@ -69,7 +69,7 @@ session_start();
 
                         <input type="hidden" name="formulario" class="btn btn-primary" value="registro">
                         <input type="submit" name="enviar" class="btn btn-primary" value="Enviar">
-                        <input type="reset" class="btn btn-primary">
+                        <input type="reset" class="btn btn-primary" value="Limpiar">
 
                         <br><br>
 
