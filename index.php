@@ -52,7 +52,7 @@ session_start();
 
                     <br />
 
-                    <h2>Gestor de empleados Primax</h2>
+                    <h2>Gestor de Empleados Primax</h2>
 
 
                     <br><br>

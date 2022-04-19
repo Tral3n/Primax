@@ -87,7 +87,7 @@ isset($_SESSION['nombre_usuario']))
                         <div class="form-group">
                             <label for="formGroupExampleInput" class="form-label"><b>Sexo</b></label>
                             <select class="form-select" name='se' aria-label="Default select example" <?php echo isset($_REQUEST['btnConsultar']) ? 'disabled' : '' ?>>
-                                <option selected>Seleccionar</option>
+                                <option selected disabled>Seleccionar</option>
                                 <option value="Femenino">Femenino</option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Otro">Otro</option>
@@ -219,6 +219,101 @@ isset($_SESSION['nombre_usuario']))
         </div>
     </div>
 
+    
+
+    <?php
+
+
+
+
+include "Conexion/Conexion.php";
+$conexion = mysqli_connect($db_host, $db_usuario, $db_pw, $db_nombre);
+
+$consulta = "SELECT * FROM tblempleados ORDER BY Numero_identificacion DESC ";
+
+
+$resultado = mysqli_query($conexion, $consulta);
+
+
+
+if (mysqli_num_rows($resultado) != 0) {
+
+    echo '<table class="table table-bordered table-striped">';
+    echo '<thead>';
+    echo '<tr>';
+    echo '<th>TIPO IDENTIFICACION</th>';
+    echo '<th>NUMERO IDENTIFICACION</th>';
+    echo '<th>NOMBRE</th>';
+    echo '<th>APELLIDOS</th>';
+    echo '<th>SEXO</th>';
+    echo '<th>DIRECCION</th>';
+    echo '<th>CONTACTO FAMILIAR</th>';
+    echo '<th>PARENTESCO</th>';
+    echo '<th>TELEFONO</th>';
+    echo '<th>CARGO</th>';
+    echo '<th>TIPO CONTRATO</th>';
+    echo '<th>ESTADO</th>';
+    echo '<th>FECHA INGRESO</th>';
+    echo '<th>FECHA TERMINACION</th>';
+    echo '<th>MOTIVO TERMINACION</th>';
+    echo '</tr>';
+    echo '</thead';
+
+    while ($row = mysqli_fetch_array($resultado)) {
+
+
+
+
+
+
+        echo '<tbody id="myTable">';
+        echo '<tr>';
+        echo '<td>' . $row['Tipo_Identificacion'] . '</td>';
+        echo '<td>' . $row['Numero_identificacion'] . '</td>';
+        echo '<td>' . $row['Nombre'] . '</td>';
+        echo '<td>' . $row['Apellidos'] . '</td>';
+        echo '<td>' . $row['Sexo'] . '</td>';
+        echo '<td>' . $row['Direccion'] . '</td>';
+        echo '<td>' . $row['Contacto_Familiar'] . '</td>';
+        echo '<td>' . $row['Parentesco'] . '</td>';
+        echo '<td>' . $row['Telefono'] . '</td>';
+        echo '<td>' . $row['Cargo'] . '</td>';
+        echo '<td>' . $row['Tipo_Contrato'] . '</td>';
+        echo '<td>' . $row['Estado'] . '</td>';
+        echo '<td>' . $row['Fecha_Ingreso'] . '</td>';
+        echo '<td>' . $row['Fecha_Terminacion'] . '</td>';
+        echo '<td>' . $row['Motivo_Terminacion'] . '</td>';
+
+        echo '</tr>';
+        echo '</tbody>';
+    }
+
+    
+} else {
+
+
+    echo '<div class="alert alert-danger">';
+    echo '<Strong>---------No existe el empleado!</Strong> No se ha creado el empleado..';
+    echo '</div>';
+}
+
+
+
+
+
+
+
+
+
+mysqli_close($conexion);
+echo '</table>';
+echo '<script src="Presentacion/js/filtracionTabla.js"></script>';
+
+?>
+
+
+
+
 
     <?php
 
@@ -262,6 +357,7 @@ isset($_SESSION['nombre_usuario']))
             echo '<Strong>---------Ya existe el empleado!</Strong> No se ha creado el empleado..';
             echo '</div>';
         }
+        
 
         mysqli_close($conexion);
     }
@@ -351,7 +447,7 @@ isset($_SESSION['nombre_usuario']))
 
 
 
-
+       
 
         mysqli_close($conexion);
         echo '</table>';
@@ -455,6 +551,7 @@ isset($_SESSION['nombre_usuario']))
             echo '</tr>';
             echo '</tbody>';
         }
+       
         mysqli_close($conexion);
         echo '</table>';
         echo '<script src="Presentacion/js/filtracionTabla.js"></script>';
@@ -486,6 +583,7 @@ if (isset($_REQUEST['btnEliminar'])) {
         echo '<Strong>---------No existe el empleado!</Strong><br>---------No se ha borrado el empleado..';
         echo '</div>';
     }
+   
 
     mysqli_close($conexion);
     

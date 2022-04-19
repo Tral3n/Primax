@@ -16,7 +16,15 @@ if($_POST['formulario'] == 'index'){
         
         if (isset($_SESSION['mensaje'])) {
             
-            $_SESSION['mensaje']= "Debes ingresar el usuario y el password, ";
+            $_SESSION['mensaje']= "
+           <div class='center'>
+            <div class='alert-danger '>
+           
+            Debes ingresar el usuario y el password 
+            </div>
+            </div>
+             "
+            ;
             header('Location:../index.php');
             
 
@@ -57,7 +65,13 @@ if($_POST['formulario'] == 'index'){
 
                 if (isset($_SESSION['mensaje'])) {
                       
-                    $_SESSION['mensaje']= "Corregir usuario o password, son invalidos";
+                    $_SESSION['mensaje']= "
+                    <div class='center'>
+                    <div class='alert-danger '>
+                    El usuario o password no son validos
+                    </div>
+                    </div>";
+                    
                     header("Location:../index.php");
                     
                 }
