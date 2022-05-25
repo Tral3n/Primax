@@ -54,9 +54,9 @@ session_start();
                     <br><br>
 
                     <div class="form-group">
-                        <label for="formGroupExampleInput" class="form-label"><b>NOMBRE</b></label>
+                        <label for="formGroupExampleInput" class="form-label"><b>EMAIL</b></label>
                         <br>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                         <br>
                         <label for="formGroupExampleInput" class="form-label"><b>USUARIO</b></label>
                         <br>

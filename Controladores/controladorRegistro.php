@@ -6,12 +6,12 @@ $_SESSION['mensaje'] = " ";
 if($_POST['formulario'] == 'registro'){
 
 
-    $name = trim($_POST['nombre']);
+    $email = trim($_POST['email']);
     $user = trim($_POST['user_name']);
     $pass = trim($_POST['password']);
     
 
-    if (empty($name) or empty($user) or empty($pass)) {
+    if (empty($email) or empty($user) or empty($pass)) {
         
         
         if (isset($_SESSION['mensaje'])) {
@@ -35,7 +35,7 @@ if($_POST['formulario'] == 'registro'){
 
             
 
-            $sql = "INSERT INTO login_user VALUES('','$name', '$user', '$pass')";
+            $sql = "INSERT INTO login_user VALUES('','$email', '$user', '$pass')";
                 echo $sql;
             if ($con->query($sql) === TRUE) {
                 $_SESSION['mensaje']= "Usuario Registrado Correctamente";

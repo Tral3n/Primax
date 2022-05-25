@@ -46,7 +46,7 @@ if($_POST['formulario'] == 'index'){
 
             $resultado_sql = mysqli_query(
                 $con,
-                "SELECT id,nombre FROM login_user WHERE user_name='" . $user. "'
+                "SELECT id,email FROM login_user WHERE user_name='" . $user. "'
                  AND pass= '" . $pass . "'"
             );
 
@@ -56,7 +56,7 @@ if($_POST['formulario'] == 'index'){
 
 
                 $_SESSION['id_session'] = $registro['id']."1000";
-                $_SESSION['nombre_usuario'] = $registro['nombre'];
+                $_SESSION['nombre_usuario'] = $registro['email'];
                 $_SESSION['mascota'] = "cocodrilo";
 
         

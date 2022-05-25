@@ -1,6 +1,12 @@
 <?php
-
 session_start();
+$fullurl = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+if(strpos($fullurl,"mode=reset_success")== true){
+ echo "<div class=\"alert alert-success\">
+ <H4><center>SE HA CAMBIADO LA CONTRASEÑA</H4> </center>
+ </div>";
+}
 
 
 ?>
@@ -73,7 +79,7 @@ session_start();
                         <input type="hidden" name="formulario" class="btn btn-primary" value="index">
                         <input type="submit" name="enviar" class="btn btn-primary" value="Iniciar">
                         <input type="reset" class="btn btn-primary" value="Limpiar">
-                        <input type="submit" class="btn btn-primary" value="Olvido contrasena?">
+                        <a href="recoverPass.php" class="btn btn-primary"><b>Olvido contrasena?</b></a>
                      
                         <br><br>
 
@@ -83,6 +89,7 @@ session_start();
                         
                         ?>
                         <a  href="Registro.php"><b>Registrarse</b></a>
+                        
 
 
             
