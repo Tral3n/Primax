@@ -12,6 +12,18 @@ if (
 
     $usuario = $_SESSION["nombre_usuario"];
 
+    $fullurl = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+if(strpos($fullurl,"mode=CC_incorrect")== true){
+ echo "<div class=\"alert alert-danger\">
+ <H4><center>El empleado ingresado no existe!</H4> </center>
+ </div>";
+}
+
+    
+
+
+   
 
 
     echo 'Session conectada:' . $session;
@@ -42,7 +54,7 @@ if (
     <br />
     <br />
     <div class="container">
-        <form role="form" method="POST">
+    <form action="Certificado.php" method="post" align="center"
             <div class="row">
                 <div class="col-12">
                     <h4>Reportes</h4>
@@ -50,22 +62,18 @@ if (
                     <div class="session-box">
                         <div class="media-body">
                             <div class="media align-items-center sm-avatar">
-
-
-                                <?php include "Conexion/Conexion.php";
-                                $conexion = mysqli_connect($db_host, $db_usuario, $db_pw, $db_nombre);
-                                ?>
+                                
                                 <div class="form-group">
-                                    <label for="formGroupExampleInput" class="form-label"><b>Empleado</b></label>
-                                    <select class="form-select" name='empleado' value="empleado">
-                                        <option value="0">Seleccione: </option>
-                                        <?php
-                                        $query = $conexion->query("SELECT Nombre, Apellidos FROM tblempleados");
-                                        while ($valores = mysqli_fetch_array($query)) {
-                                            echo '<option>' . $valores['Nombre'] .' '. $valores['Apellidos']. '</option>';
-                                        }
-                                        ?>
+                                    <label for="formGroupExampleInput" class="form-label"><b>Ingrese identificacion del empleado a generar certificado</b></label>
+                                    <input type="text" class="form-control" id="CC" name="CC" placeholder="Ingrese la cedula" required>                                 
+                                      
+                                       
+                                      
                                     </select>
+                                    
+                                    <?
+                                   
+                                    ?>
                                 </div>
 
                             </div>
@@ -74,7 +82,7 @@ if (
                 </div>
             </div>
             <br>
-           <center><a href="Certificado.php" type="submit" class="btn btn-primary btn-lg">Generar Certificado</a></center>
+           <center><button type="submit" name="generar" id="generar" class="btn btn-secondary btn-lg">Generar Certificado</button></center>
            <br>
            <center><a href="Menu.php" type="button" class="btn btn-primary btn-lg">Volver</a></center>
         </form>
