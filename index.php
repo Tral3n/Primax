@@ -1,6 +1,17 @@
 <?php
+<<<<<<< HEAD
 
 session_start();
+=======
+session_start();
+$fullurl = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+if(strpos($fullurl,"mode=reset_success")== true){
+ echo "<div class=\"alert alert-success\">
+ <H4><center>SE HA CAMBIADO LA CONTRASEÑA</H4> </center>
+ </div>";
+}
+>>>>>>> teo
 
 
 ?>
@@ -18,10 +29,18 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Presentacion/css/fondo2.css">
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" type="text/css" href="Notificaciones/toast.css">
+>>>>>>> teo
 
 </head>
 
 <body>
+<<<<<<< HEAD
+=======
+<div class = "toast"> ejemplo de toast </div>
+>>>>>>> teo
     <div class="container">
         <div class="row">
 <div class="col">
@@ -50,7 +69,11 @@ session_start();
 
                     <br />
 
+<<<<<<< HEAD
                     <h2>Gestor de empleados Primax</h2>
+=======
+                    <h1>Gestor de Empleados Primax</h1>
+>>>>>>> teo
 
 
                     <br><br>
@@ -66,12 +89,22 @@ session_start();
                         <label for="formGroupExampleInput" class="form-label"><b>PASSWORD</b></label><br>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                         <br><br>
+<<<<<<< HEAD
 
 
                         <input type="hidden" name="formulario" class="btn btn-primary" value="index">
                         <input type="submit" name="enviar" class="btn btn-primary" value="Iniciar">
                         <input type="reset" class="btn btn-primary">
 
+=======
+                        
+
+                        <input type="hidden" name="formulario" class="btn btn-primary" value="index">
+                        <input type="submit" name="enviar" class="btn btn-primary" value="Iniciar">
+                        <input type="reset" class="btn btn-primary" value="Limpiar">
+                        <a href="recoverPass.php" class="btn btn-primary"><b>Olvido contrasena?</b></a>
+                     
+>>>>>>> teo
                         <br><br>
 
                         <?php 
@@ -80,6 +113,10 @@ session_start();
                         
                         ?>
                         <a  href="Registro.php"><b>Registrarse</b></a>
+<<<<<<< HEAD
+=======
+                        
+>>>>>>> teo
 
 
             
@@ -114,7 +151,11 @@ session_start();
 
     </div>                    
 
+<<<<<<< HEAD
 
+=======
+ <script scr="./Notificaciones/toast.js"> </script>
+>>>>>>> teo
 </body>
 
 </html>

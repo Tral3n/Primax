@@ -16,7 +16,19 @@ if($_POST['formulario'] == 'index'){
         
         if (isset($_SESSION['mensaje'])) {
             
+<<<<<<< HEAD
             $_SESSION['mensaje']= "Debes ingresar el usuario y el password, ";
+=======
+            $_SESSION['mensaje']= "
+           <div class='center'>
+            <div class='alert-danger '>
+           
+            Debes ingresar el usuario y el password 
+            </div>
+            </div>
+             "
+            ;
+>>>>>>> teo
             header('Location:../index.php');
             
 
@@ -38,7 +50,11 @@ if($_POST['formulario'] == 'index'){
 
             $resultado_sql = mysqli_query(
                 $con,
+<<<<<<< HEAD
                 "SELECT id,nombre FROM login_user WHERE user_name='" . $user. "'
+=======
+                "SELECT id,email FROM login_user WHERE user_name='" . $user. "'
+>>>>>>> teo
                  AND pass= '" . $pass . "'"
             );
 
@@ -48,7 +64,11 @@ if($_POST['formulario'] == 'index'){
 
 
                 $_SESSION['id_session'] = $registro['id']."1000";
+<<<<<<< HEAD
                 $_SESSION['nombre_usuario'] = $registro['nombre'];
+=======
+                $_SESSION['nombre_usuario'] = $registro['email'];
+>>>>>>> teo
                 $_SESSION['mascota'] = "cocodrilo";
 
         
@@ -56,8 +76,19 @@ if($_POST['formulario'] == 'index'){
             } else {
 
                 if (isset($_SESSION['mensaje'])) {
+<<<<<<< HEAD
 
                     $_SESSION['mensaje']= "Corregir usuario o password, son invalidos";
+=======
+                      
+                    $_SESSION['mensaje']= "
+                    <div class='center'>
+                    <div class='alert-danger '>
+                    El usuario o password no son validos
+                    </div>
+                    </div>";
+                    
+>>>>>>> teo
                     header("Location:../index.php");
                     
                 }
