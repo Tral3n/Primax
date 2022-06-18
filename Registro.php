@@ -23,10 +23,6 @@ session_start();
 <body>
 
     <div class="container">
-<<<<<<< HEAD
-        
-=======
->>>>>>> teo
         <div class="row">
             <div class="col">
 
@@ -36,12 +32,7 @@ session_start();
             <div class="col-4">
 
 
-<<<<<<< HEAD
-            <br>
-        <br>
-=======
 
->>>>>>> teo
                 <form action="Controladores/controladorRegistro.php" method="post" align="center">
                    
 
@@ -60,46 +51,25 @@ session_start();
                     <br />
                     <h2>Ingrese los datos del Usuario para el registro</h2>
 
-<<<<<<< HEAD
-                    <br>
-                    <label for="formGroupExampleInput" class="form-label"><b>Los campos con "*" son obligatorios</b></label>
-                    <br>
-
-                    <div class="form-group">
-                        <label for="formGroupExampleInput" class="form-label"><b>NOMBRE *</b></label>
-                        <br>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
-                        <br>
-                        <label for="formGroupExampleInput" class="form-label"><b>USUARIO *</b></label>
-                        <br>
-                        <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Usuario">
-                        <br>
-                        <label for="formGroupExampleInput" class="form-label"><b>PASSWORD *</b></label><br>
-=======
                     <br><br>
 
                     <div class="form-group">
                         <label for="formGroupExampleInput" class="form-label"><b>EMAIL</b></label>
                         <br>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                         <br>
                         <label for="formGroupExampleInput" class="form-label"><b>USUARIO</b></label>
                         <br>
                         <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Usuario">
                         <br>
                         <label for="formGroupExampleInput" class="form-label"><b>PASSWORD</b></label><br>
->>>>>>> teo
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                         <br><br>
 
 
                         <input type="hidden" name="formulario" class="btn btn-primary" value="registro">
                         <input type="submit" name="enviar" class="btn btn-primary" value="Enviar">
-<<<<<<< HEAD
-                        <input type="reset" class="btn btn-primary">
-=======
                         <input type="reset" class="btn btn-primary" value="Limpiar">
->>>>>>> teo
 
                         <br><br>
 

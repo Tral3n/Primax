@@ -7,6 +7,95 @@ if (isset($_GET['mode'])) {
     $mode = $_GET['mode'];
 }
 //posted
+$fullurl = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+if(strpos($fullurl,"mode=code_incorrect")== true){
+ echo "
+ <div class=\"alert alert-danger\">
+ <H4><center>CODIGO INVALIDO!</H4> </center>
+ </div>
+ <div class=\"container\">
+ <div class=\"row\">
+     <div class=\"col\">
+
+
+
+     </div>
+     <div class=\"col-4\">
+ 
+
+ 
+ <form action=\"includes/reset-password.php\" method=\"post\" align=\"center\">
+                    <h2>Recuperar contrasena</h2>
+                    <br><br>
+                    <h3>Ingrese el codigo que recibio en el correo</h3>
+                    <br><br>
+                    <div class=\"form-group\">
+                        <label for=\"formGroupExampleInput\" class=\"form-label\"><b>Codigo</b></label>
+                        <br>
+                        <input type=\"number\" class=\"form-control\" id=\"code\" name=\"code\" placeholder=\"Ingrese su codigo\" required>
+                        <br>
+                        <br><br>
+                                          
+                        <button type=\"submit\" class=\"btn btn-primary\" id=\"code-submit\" name=\"code-submit\">Aceptar</button>
+                        <br><br>
+                        <a href=\"recoverPass.php\"><b>Atras</b></a>
+                    </div>
+                </form>
+                </div>
+                <div class=\"col\">
+                </div>
+    
+            </div>
+    
+        </div>
+ ";
+ 
+}elseif(strpos($fullurl,"mode=enter_password_passnotsame")== true){
+    echo "<div class=\"alert alert-danger\">
+    <H4><center>Contraseñas no coinciden!</H4> </center>
+    </div>
+    <div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col\">
+
+
+
+        </div>
+        <div class=\"col-4\">
+    <form action=\"includes/reset-login.php\" method=\"post\" align=\"center\">
+                        <h2>Recuperar contrasena</h2>
+                        <br><br>
+                        <h3>Ingrese su nueva contrasena</h3>
+                        <br><br>
+                        <div class=\"form-group\">
+                            <label for=\"formGroupExampleInput\" class=\"form-label\"><b>Nueva contrasena</b></label>
+                            <br>
+                           
+                            <input type=\"password\" class=\"form-control\" name=\"pass1\" placeholder=\"Ingrese su contrasena nueva\" required>
+                            <input type=\"password\" class=\"form-control\" name=\"pass2\" placeholder=\"Ingrese su contrasena nueva , nuevamente\" required>
+                            <br>
+                            <br><br>
+                                                    
+                            <button type=\"submit\" class=\"btn btn-primary\" name=\"reset-submit\">Aceptar</button>
+                            <br><br>
+                            <a href=\"index.php\"><b>Atras</b></a>
+                        </div>
+                    </form>
+    
+                    </div>
+                    <div class=\"col\">
+                    </div>
+        
+                </div>
+        
+            </div>
+    
+    
+    
+    ";
+}
+
 if (count($_POST) > 0) {
     switch ($mode) {
         case 'enter_email':
@@ -16,19 +105,22 @@ if (count($_POST) > 0) {
             break;
         case 'enter_code':
             header("Location: recoverPass.php?mode=enter_code");
+           
             die;
             break;
         case 'enter_password':
             header("Location: recoverPass.php?mode=enter_password");
             die;
             break;
+            
 
         default:
             # code...
             break;
     }
-}
 
+
+}
 
 ?>
 
@@ -78,55 +170,63 @@ if (count($_POST) > 0) {
                 </form>
                 <?php
                         break;
-                    case 'enter_code':
-                        ?>
-                        <form action="includes/reset-password.php" method="post" align="center">
-                    <h2>Recuperar contrasena</h2>
-                    <br><br>
-                    <h3>Ingrese el codigo que recibio en el correo</h3>
-                    <br><br>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput" class="form-label"><b>Codigo</b></label>
-                        <br>
-                        <input type="text" class="form-control" id="code" name="code" placeholder="Ingrese su codigo" required>
-                        <br>
+                        case 'enter_code':
+                            ?>
+                            <form action="includes/reset-password.php" method="post" align="center">
+                        <h2>Recuperar contrasena</h2>
                         <br><br>
-                                          
-                        <button type="submit" class="btn btn-primary" id="code-submit" name="code-submit">Aceptar</button>
+                        <h3>Ingrese el codigo que recibio en el correo</h3>
                         <br><br>
-                        <a href="index.php"><b>Atras</b></a>
-                    </div>
-                </form>
-                <?php
-                        break;
-                    case 'enter_password':
-                        ?>
-                        <form action="includes/reset-login.php" method="post" align="center">
-                    <h2>Recuperar contrasena</h2>
-                    <br><br>
-                    <h3>Ingrese su nueva contrasena</h3>
-                    <br><br>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput" class="form-label"><b>Nueva contrasena</b></label>
-                        <br>
-                       
-                        <input type="password" class="form-control" name="pass1" placeholder="Ingrese su contrasena nueva" required>
-                        <input type="password" class="form-control" name="pass2" placeholder="Ingrese su contrasena nueva , nuevamente" required>
-                        <br>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput" class="form-label"><b>Codigo</b></label>
+                            <br>
+                            <input type="number" class="form-control" id="code" name="code" placeholder="Ingrese su codigo" required>
+                            <br>
+                            <br><br>
+                                              
+                            <button type="submit" class="btn btn-primary" id="code-submit" name="code-submit">Aceptar</button>
+                            <br><br>
+                            <a href="index.php"><b>Atras</b></a>
+                        </div>
+                    </form>
+                    <?php
+                            break;
+                        
+                        case 'enter_password':
+                            ?>
+                            <form action="includes/reset-login.php" method="post" align="center">
+                        <h2>Recuperar contrasena</h2>
                         <br><br>
-                                                
-                        <button type="submit" class="btn btn-primary" name="reset-submit">Aceptar</button>
+                        <h3>Ingrese su nueva contrasena</h3>
                         <br><br>
-                        <a href="index.php"><b>Atras</b></a>
-                    </div>
-                </form>
-                <?php
-                        break;
-
+                        <div class="form-group">
+                            <label for="formGroupExampleInput" class="form-label"><b>Nueva contrasena</b></label>
+                            <br>
+                           
+                            <input type="password" class="form-control" name="pass1" placeholder="Ingrese su contrasena nueva" required>
+                            <input type="password" class="form-control" name="pass2" placeholder="Ingrese su contrasena nueva , nuevamente" required>
+                            <br>
+                            <br><br>
+                                                    
+                            <button type="submit" class="btn btn-primary" name="reset-submit">Aceptar</button>
+                            <br><br>
+                            <a href="index.php"><b>Atras</b></a>
+                        </div>
+                    </form>
+                    <?php
+                            break;
+                                         
+             
+                      
                     default:
                         # code...
                         break;
                 }
+   
+                   
+
+
+                 
 
                 ?>
           

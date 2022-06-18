@@ -69,11 +69,7 @@ isset($_SESSION['nombre_usuario']))
                     <br />
                     <br />
                     <br />
-<<<<<<< HEAD
-                    <a href="Soporte.php" type="button" class="btn btn-primary btn-lg">Soporte</a>
-=======
                     <a href="Incidentes.php" type="button" class="btn btn-primary btn-lg">Incidentes</a>
->>>>>>> teo
                 </div>
 
 
